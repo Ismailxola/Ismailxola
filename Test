@@ -1,0 +1,19 @@
+$Attributes = @{
+Enabled = $true 
+ChangePasswordAtLogon = $true
+UserPrincipalName = "testF@fitplus.nl"
+Name = "TestF"
+GivenName = "Test" 
+Surname = "TestF" 
+DisplayName="TestF"
+Description = "This is a test account "
+Company = "fitplus" 
+Department = "IT" 
+Title = "Mnr"
+AccountPassword = "TotallPassword123" | ConvertTo-SecureString -AsPlainText -Force
+}
+New-ADUser @Attributes
+
+• Script voor User aan groep:
+C:>Import-Module ActiveDirectory
+Add-ADGroupMember -Identity GroupNAME -Member USERNAME
